@@ -2,11 +2,11 @@
   <div class="hello">
     <h1>{{msg}}</h1>
     <input type="button" value="changeText" v-on:click="changeText()"/>
-    <btn-component ref="btn"
+    <btn-component ref="btn1"
 			id="1"
 			text="one"
 		></btn-component>
-		<btn-component ref="btn"
+		<btn-component ref="btn2"
 			id="2"
 			text="two"
 		></btn-component>
@@ -25,8 +25,7 @@ export default {
   },
   methods: {
     changeText() {
-      this.$refs.btn.idData="1";
-      this.$refs.btn.textData="two";
+      this.$refs.btn1.textData="two";
     },
   }
 }

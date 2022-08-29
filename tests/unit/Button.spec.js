@@ -2,10 +2,27 @@ import { mount } from '@vue/test-utils'
 import Button from '@/components/Button.vue'
 
 describe('Button.vue', () => {
-  it('renders props.msg when passed', () => {
-    const text = 'Button 1'
-    const wrapper = mount(Button, {
+  let wrapper;
+  const id = '1';
+  const text = 'Button 1';
+  beforeEach(() => {
+    wrapper = mount(Button, {
+      props: { 
+        id: id,
+        text: text 
+      },
     })
-    expect(wrapper.html()).toMatch(text)
+  });
+  it('renders props.text when passed', () => {
+    expect(wrapper.text()).toMatch(text);
+    expect(wrapper.props('id')).toBe(id);
+    expect(wrapper.props('text')).toBe(text);
+  })
+
+  it('changes label of button when passed', async () => {
+    await wrapper.setData({textData: 'Button 2'});
+    await wrapper.setData({idData: '2'});
+    expect(wrapper.html()).toMatch('Button 2');
+    expect(wrapper.attributes('id')).toBe('2');
   })
 })
