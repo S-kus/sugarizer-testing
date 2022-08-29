@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>HelloWorld</h1>
+    <h1>Home</h1>
     <input type="button" value="changeText" v-on:click="changeText()"/>
     <btn-component ref="btn"
 			id="1"
@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import btnComponent from '../components/Button.vue';
+import btnComponent from './Button.vue';
 export default {
-  name: 'HelloWorld',
+  name: 'HomeComponent',
   components: {
     btnComponent,
   },
