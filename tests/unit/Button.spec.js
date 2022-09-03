@@ -13,6 +13,7 @@ describe('Button.vue', () => {
       },
     })
   });
+
   it('renders props.text when passed', () => {
     expect(wrapper.text()).toMatch(text);
     expect(wrapper.props('id')).toBe(id);
